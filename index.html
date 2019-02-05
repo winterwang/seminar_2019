@@ -17,6 +17,88 @@ class: center, middle, inverse, title-slide
 
 ---
 
+
+
+
+class: middle
+# 目標 &lt;br&gt; objectives
+
+- 確率論の基本を理解する &lt;br&gt; Understand the basics theories of probability
+
+- 確率ツリーを利用して確率を計算する &lt;br&gt; Draw a probability tree and obtain probability from it
+
+- ベイズの定理を実際に臨床的な疑問に応用する &lt;br&gt; Apply Bayes' Theorem to clinical examples
+
+
+
+---
+class: middle
+# 確率 &lt;br&gt; probability
+
+- 確率とは？&lt;br&gt; What is probability?
+
+    - コインを投げて，表が出る確率は0.5 &lt;br&gt; when tossing a coin the probability of obtaining a head is 0.5
+    - 明日長久手市で雨が降る確率は0.8 &lt;br&gt; The probability that it will rain tomorrow in Nagakute is 0.8
+
+- 確率の正式な定義 &lt;br&gt; Formally define the probability: 
+
+$$
+P(\text{event of interest}) = \lim_{n \rightarrow \infty}\frac{n \text{ of events}}{\text{sum of  }n}
+$$
+
+
+---
+class: middle
+# 医学での確率 &lt;br&gt; probability in medicine
+
+- 極めて重要な概念である &lt;br&gt; probability is crucial to medical science
+
+    - イベントの予測 &lt;br&gt; predicting events
+        - Aさん（50歳，男性，心血管疾患病歴なし，運動不足，脳卒中家族歴あり，糖尿病）のこれから１０年の間心臓病で死亡する確率？&lt;br&gt; What is the probability that a particular patient A will die from heart disease in the next 10 years?
+    - 変数と変数との関係性を評価する &lt;br&gt; assessing whether two characterisitcs are related 
+        - ピロリ菌感染と胃がん発生との関係 &lt;br&gt; Is _H. pylori_ infection related with the development of gastric cancer?
+
+---
+class: middle
+# 実例 Example
+
+- 臨床疑問：ピロリ菌の感染者，と非感染者の中に，胃がんの有病率はそれぞれどれぐらいあるでしょうか？ &lt;br&gt; What is the prevalence of gastric cancer patients in people infected with _H. pylori_, and in those who are _H. pylori_ free?
+
+- 研究デザイン：集団から無作為的にサンプルを選んで来て，そのサンプルの中で，胃がん患者 `\((A)\)`（ではない `\((\bar{A})\)`）人数，それからピロリ菌の感染者 `\((S)\)`（そうではない `\((\bar{S})\)`）の人数をカウントする．&lt;br&gt; Randomly select a number of individuals from the population and record whether they have gastric cancer `\((A)\)` or not `\((\bar{A})\)`, whether or not they were infected with _H. pylori_ ( `\(S\)` or `\(\bar{S}\)`).
+
+- （神様しか知らない）真の値：ある集団のピロリ菌感染率は70%，そのうち15%の感染者が胃がん患者で，非感染の残りの30%の人では，胃がんの患者の割合はわずかの3%．&lt;br&gt; True prevalence of _H. pylori_ in the population is 70% and that 15% of which suffer gastric cancer, whereas only 3% of people who are _H. pylori_ free have gatric cancer. 
+
+---
+class: middle
+# 確率論の公理 &lt;br&gt; axioms of probability
+
+1. `\(0 \leqslant P(A) \leqslant 1\)` for any event `\(A\)`; 
+
+2. `\(P(\Omega) = 1\)` where `\(\Omega\)` is the total sample space (全標本空間); 
+
+3. For mutually exclusive events (排反事象) `\(A_1, \dots, A_n\)`:  `$$P(A_1 \cup A_2 \cup \dots \cup A_n) = P(A_1) + P(A_2) +\cdots + P(A_n)$$`
+
+
+
+???
+
+排反事象: はいはんじしょう
+
+---
+class: middle
+# 条件付き確率 &lt;br&gt; conditional probability
+
+胃がん患者 `\((A)\)`，とピロリ菌感染者 `\((S)\)` の２つのイベントを考えてください：
+
+- もしAさんがピロリ菌感染している，Aさんの胃がんである確率はどれぐらい？&lt;br&gt; Suppose we know that an individual is infected with _H. pylori_. What, then, is the probability that they suffer from asthma?
+
+- これは条件付き確率と呼ばれる，つまり，感染していることが前提で，そのうち胃がんの割合． &lt;br&gt; we call this conditional probability of A "given" B.
+
+- 条件付き確率の記載法: `\(P(A|S)\)` &lt;br&gt; the probability that `\(A\)` occurs, given or conditional on `\(S\)` occuring.
+
+条件付き確率もとても重要な概念である，例えば，以下の質問は典型的な条件付き質問：
+
+高血圧の患者Aさん, これから5年間の間，心筋梗塞に罹患する確率．
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
