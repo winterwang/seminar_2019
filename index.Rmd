@@ -1,0 +1,26 @@
+---
+title: "Understand sensitivity and specificity"
+subtitle: "ピロリ菌セミナー"
+author: "王　超辰 | Chaochen Wang"
+date: "2019-02-13 pm"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    lib_dir: libs
+    nature:
+      countdown: 60000
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+mono_light(
+  base_color = "#1c5253",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono")
+)
+```
+
