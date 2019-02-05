@@ -101,6 +101,131 @@ class: middle
 - 条件付き確率の記載法: $P(A|S)$ <br> the probability that $A$ occurs, given or conditional on $S$ occuring.
 
 条件付き確率もとても重要な概念である，例えば，以下の質問は典型的な条件付き質問：
-
 高血圧の患者Aさん, これから5年間の間，心筋梗塞に罹患する確率．
 
+---
+class: middle
+# 条件付き確率定義 <br> Defining conditional probability 
+
+$$P(A|S) = \frac{P(A\cap S)}{P(S)}$$
+
+
+
+$$
+\Rightarrow  P(A\cap S) = P(S)P(A|S)
+$$
+
+
+---
+class: middle, inverse
+# 確率ツリー <br> Probability trees
+
+
+---
+class: middle
+
+### 成人での喫煙者の割合は20% <br> Prevalence of smoking is 20% among adults, i.e. $P(S) = 0.2$
+
+### 喫煙者の9%，非喫煙者の7%は喘息を罹っている <br> 9% of smokers and 7% of non-smokers have asthma, i.e. $P(A|S)= 0.09, P(A|\bar{S})  = 0.007$
+
+### Aさんは喫煙者かつ喘息患者の確率を求めよ <br> What is the probability that someone has asthma and is a smoker $P(A\cap S) =?$
+
+---
+class: middle
+background-image: url("./pic/probability_tree.png")
+background-position: 50% 50%
+background-size: contain
+
+
+---
+class: middle, bottom
+background-image: url("./pic/probability_tree.png")
+background-position: 50% 50%
+background-size: contain
+
+$$
+P(A\cap S) = p(S)\times P(A|S) = 0.018
+$$
+
+
+---
+class: middle
+# 逆条件 <br> Reverse conditioning
+
+我々は逆条件を利用したくて，確率を出したい場合が多い <br> We often wish to reverse the conditioning in probabilities:
+
+例えば，胃がん治療専門クリニックでは，どれぐらいの医療資源をピロリ菌除菌治療に投入すべきかを知りたい．<br> For example, suppose an gastric cancer clinic wants to know how many resources to dedicate to anti-_H. pylori_ treatment.
+
+- 専門医は，胃がん患者の中に，_H. pylori_ 感染者の割合を算出したい．<br> The clinic would want to know what proportion of gastric cancer patients were actually infected with _H. pylori_, i.e. $P(S|A) = ?$.
+
+- しかし，条件付きの確率だけわかる <br> we only have information about $P(A|S)$
+
+---
+class: middle
+# ベイズの定理 I <br> Bayes theorem I
+
+- We can express $P(A\cap S)$ in two ways: 
+
+$$
+\begin{aligned}
+P(A\cap S) & = P(A|S)P(S) \\
+& \text{or} \\ 
+P(A\cap S) & = P(S|A)P(A)
+\end{aligned}
+$$
+
+- Equating the two, we have: 
+
+$$
+\begin{aligned}
+\Rightarrow P(S|A)P(A) & = P(A|S)P(S) \\
+P(S|A) & = \frac{P(A|S)P(S)}{P(A)}
+\end{aligned}
+$$
+
+---
+class: middle
+# ベイズの定理 II <br> Bayes theorem II
+
+- Because 
+
+$$
+\begin{aligned}
+P(A) & = P(A\cap S) + P(A \cap \bar{S}) \\
+     & = P(A|S)P(S) + P(A|\bar{S})P(\bar{S})
+\end{aligned}
+$$
+
+
+- So, we have: 
+
+$$
+\begin{aligned}
+P(S|A) = \frac{P(A|S)P(S)}{P(A|S)P(S) + P(A|\bar{S})P(\bar{S})}
+\end{aligned}
+$$
+
+これはベイズの定理．<br> This is Bayes' Theorem
+
+---
+class: middle
+### 嚢胞性線維症(CF)スクリーニングテスト
+
+- CFは遺伝子変異を原因とする劣性遺伝性疾患です．<br> Cystic fibrosis is an inherited disease
+
+- 汗中クロライド濃度テストは診断に使うゴールドスタンダード．<br> The sweat chloride test is the gold standard diagnostic test. 
+
+- 低所得国においては，簡易な測定方法がより適宜かもしれない．<br> In low income settings the simpler sweat conductivity test may be more appropriate. 
+
+簡易測定法の属性：
+
+- CF患者では，陽性結果になる確率は $P(+ve | CF) = 0.875$
+- 言い換えれば，この測定法の感度(sensitivity)は $0.875$
+
+- CF患者じゃない人で，陽性結果が出る確率は $P(+ve|\bar{CF}) = 0.004$
+- つまり，特異度(specificity)は $P(-ve|\bar{CF}) = 1-0.004 = 0.996$
+
+
+???
+
+嚢胞性線維症のうほうせいせんいしょう
