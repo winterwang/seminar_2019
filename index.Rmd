@@ -67,7 +67,7 @@ class: middle
 
 ---
 class: middle
-# 実例 Example
+## 実例 Example
 
 - 臨床疑問：ピロリ菌の感染者，と非感染者の中に，胃がんの有病率はそれぞれどれぐらいあるでしょうか？ <br> What is the prevalence of gastric cancer patients in people infected with _H. pylori_, and in those who are _H. pylori_ free?
 
@@ -97,9 +97,9 @@ class: middle
 
 胃がん患者 $(A)$，とピロリ菌感染者 $(S)$ の２つのイベントを考えてください：
 
-- もしAさんがピロリ菌感染している，Aさんの胃がんである確率はどれぐらい？<br> Suppose we know that an individual is infected with _H. pylori_. What, then, is the probability that they suffer from asthma?
+- もしAさんがピロリ菌感染している，Aさんが同時に胃がん患者である確率はどれぐらい？<br> Suppose we know that an individual is infected with _H. pylori_. What, then, is the probability that they suffer from gastric cancer?
 
-- これは条件付き確率と呼ばれる，つまり，感染していることが前提で，そのうち胃がんの割合． <br> we call this conditional probability of A "given" B.
+- これは条件付き確率と呼ばれる，つまり，**感染していることが前提で**，そのうち胃がんの割合． <br> we call this conditional probability of $A$ "given" $S$.
 
 - 条件付き確率の記載法: $P(A|S)$ <br> the probability that $A$ occurs, given or conditional on $S$ occuring.
 
@@ -120,12 +120,14 @@ $$
 
 
 ---
-class: middle, inverse
+class: middle, inverse, center
 # 確率ツリー <br> Probability trees
 
 
 ---
 class: middle
+## 実例 Example
+
 
 #### 成人での喫煙者の割合は20% <br> Prevalence of smoking is 20% among adults, i.e. $P(S) = 0.2$
 
@@ -147,7 +149,7 @@ background-position: 50% 50%
 background-size: contain
 
 $$
-P(A\cap S) = p(S)\times P(A|S) = 0.018
+P(A\cap S) = P(S)\times P(A|S) = 0.018
 $$
 
 
@@ -155,7 +157,7 @@ $$
 class: middle
 # 逆条件 <br> Reverse conditioning
 
-我々は逆条件を利用したくて，確率を出したい場合が多い <br> We often wish to reverse the conditioning in probabilities:
+我々は逆条件を利用し，確率を出したい場合が多い <br> We often wish to reverse the conditioning in probabilities:
 
 例えば，胃がん治療専門クリニックでは，どれぐらいの医療資源をピロリ菌除菌治療に投入すべきかを知りたい．<br> For example, suppose an gastric cancer clinic wants to know how many resources to dedicate to anti-_H. pylori_ treatment.
 
@@ -219,7 +221,7 @@ class: middle
 ---
 class: middle, bottom
 background-image: url("./pic/probability_tree.png")
-background-position: 50% 50%
+background-position: 50% 30%
 background-size: contain
 
 ある喘息患者が来院して，医師のあなたはベイズの定理を応用し，この患者が喫煙者である確率を求めてみた．
@@ -227,7 +229,7 @@ background-size: contain
 ---
 class: middle, bottom
 background-image: url("./pic/probability_tree.png")
-background-position: 50% 50%
+background-position: 50% 25%
 background-size: contain
 
 $$P(S|A) = \frac{P(A|S)P(S)}{P(A|S)P(S) + P(A|\bar{S})P(\bar{S})} = \frac{0.09\times0.2}{0.09\times0.2 + 0.07\times0.8} = 0.2432$$
@@ -272,7 +274,7 @@ The question we really want to answer is: "if a patient has a positive sweat con
 ---
 class: middle, center
 
-## ベイズの定理をこの例に適用してみよ
+## ベイズの定理をこの例に適用する
 
 仮に，この集団ではCFの有病率は $P(CF) = 0.035$<br> Say the probability of CF in the population is $P(CF) = 0.035$.
 
@@ -293,7 +295,7 @@ $$
 ---
 class: middle, center
 
-## ベイズの定理をこの例に適用してみよ
+## ベイズの定理をこの例に適用する
 
 仮に，この集団ではCFの有病率は $P(CF) = 0.035$．<br> Say the probability of CF in the population is $P(CF) = 0.035$.
 
@@ -330,7 +332,47 @@ class: middle
 ---
 class: middle
 
-# 質問&宿題 <br> Question & Homework
+# 質問&宿題 <br> Question & Homework - (1)
 
-例えば，某集団でのHIVの感染率は事前の調査の結果，0.001と推定される．例えばあるスクリーニング検査法の感度(sensitivity)と特異度(specificity)はそれぞれ0.99, 0.98で検査法を開発した製薬メーカーさんから提供された．例えば患者Bさんがこの検査法で陽性の結果が得られた，Bさんが本当にHIVを感染している確率を算出せよ．この結果についてコメントしよ．
+例えば，某集団でのHIVの感染率は事前の調査の結果，0.001と推定される．あるスクリーニング検査法の感度(sensitivity)と特異度(specificity)はそれぞれ0.99, 0.98で検査法を開発した製薬メーカーさんから提供された．例えば患者Bさんがこの検査法で陽性の結果が得られた，Bさんが本当にHIVを感染している確率を算出せよ．この結果についてコメントしよ．
+
+
+---
+class: middle, center
+
+## スクリーニングテストの<br>妥当性・信頼性 <br> validity of a screening test
+
+---
+class: middle
+
+### 感度 sensitivity 
+
+- 感度は本当に病気のある人がテスト受けて陽性が出る**条件付き確率** $P(+ve|+D)$ <br> sensitivity is defined as the proportion of people with the disease who are test positive. 
+
+- 感度が低い場合，多くの患者がこの検査法でピックアップできず，**偽陰性 (false negative)**と呼ばれる．
+
+### 特異度 specificity
+
+- 特異度は本当に病気がない人がテスト受けて陰性が出る**条件付き確率** $P(-ve|-D)$ <br> specificity is defined as the proportion of people without the disease who are found test negative.
+
+- 特異度が低い場合，多くの非患者がこの検査法で患者としてラベル付けられる，**偽陽性 (false positive)**と呼ばれる．
+
+---
+class: middle
+## 現状 reality
+
+
+#### **集団全員**が病気であるかどうかを事前にわかること自体は不可能
+
+#### 同じ病気の検査法がたくさん開発され，そのうち最も信頼性の高い方法を**ゴールドスタンダード (gold standard)** として採用される
+
+#### すべてのサンプルに適応し，他の検査法をこの**ゴールドスタンダードの結果を真の結果**として評価することが多い
+
+---
+class: center, top, inverse
+background-image: url("./pic/sensitivity.png")
+background-position: 50% 70%
+background-size: contain
+
+#### ゴールドスタンダードと評価したい検査法を対象者全員に受けてもらった結果
 
