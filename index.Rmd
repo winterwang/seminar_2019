@@ -21,14 +21,16 @@ mono_light(
   header_font_google = google_font("Josefin Sans"),
   # text_font_google   = google_font("M PLUS Rounded 1c", "300", "300i"),
   text_font_google = google_font("Noto Sans JP", "300", "300i"), 
-  code_font_google   = google_font("Droid Mono")
+  code_font_google   = google_font("Droid Mono"),
+  text_bold_color = "#B03A2E"
 )
+# write_xaringan_theme(text_bold_color = "#FF4333")
 ```
 
 class: middle
 # 目標 <br> objectives
 
-- 確率論の基本を理解する <br> Understand the basics theories of probability
+- 確率論の基本を理解する <br> Understand the basic theories of probability
 
 - 確率ツリーを利用して確率を計算する <br> Draw a probability tree and obtain probability from it
 
@@ -206,30 +208,7 @@ P(S|A) = \frac{P(A|S)P(S)}{P(A|S)P(S) + P(A|\bar{S})P(\bar{S})}
 \end{aligned}
 $$
 
-これはベイズの定理．<br> This is Bayes' Theorem
-
----
-class: middle
-### 嚢胞性線維症(CF)スクリーニングテスト
-
-- CFは遺伝子変異を原因とする劣性遺伝性疾患です．<br> Cystic fibrosis is an inherited disease
-
-- 汗中クロライド濃度テストは診断に使うゴールドスタンダード．<br> The sweat chloride test is the gold standard diagnostic test. 
-
-- 低所得国においては，簡易な測定方法がより適宜かもしれない．<br> In low income settings the simpler sweat conductivity test may be more appropriate. 
-
-簡易測定法の属性：
-
-- CF患者では，陽性結果になる確率は $P(+ve | CF) = 0.875$
-- 言い換えれば，この測定法の感度(sensitivity)は $0.875$
-
-- CF患者じゃない人で，陽性結果が出る確率は $P(+ve|\bar{CF}) = 0.004$
-- つまり，特異度(specificity)は $P(-ve|\bar{CF}) = 1-0.004 = 0.996$
-
-
-???
-
-嚢胞性線維症のうほうせいせんいしょう
+これは**ベイズの定理**．<br> This is Bayes' Theorem
 
 
 ---
@@ -244,3 +223,114 @@ background-position: 50% 50%
 background-size: contain
 
 ある喘息患者が来院して，医師のあなたはベイズの定理を応用し，この患者が喫煙者である確率を求めてみた．
+
+---
+class: middle, bottom
+background-image: url("./pic/probability_tree.png")
+background-position: 50% 50%
+background-size: contain
+
+$$P(S|A) = \frac{P(A|S)P(S)}{P(A|S)P(S) + P(A|\bar{S})P(\bar{S})} = \frac{0.09\times0.2}{0.09\times0.2 + 0.07\times0.8} = 0.2432$$
+
+
+---
+class: middle
+### 嚢胞性線維症(CF)スクリーニングテスト
+
+- CFは遺伝子変異を原因とする劣性遺伝性疾患です．<br> Cystic fibrosis is an inherited disease
+
+- 汗中クロライド濃度テストは診断に使うゴールドスタンダード．<br> The sweat chloride test is the gold standard diagnostic test. 
+
+- 低所得国においては，簡易な測定方法がより適宜かもしれない．<br> In low income settings the simpler sweat conductivity test may be more appropriate. 
+
+簡易測定法の属性：
+
+- CF患者では，陽性結果になる確率は $P(+ve | CF) = 0.875$
+- 言い換えれば，この測定法の**感度(sensitivity)**は $0.875$
+
+- CF患者じゃない人で，陽性結果が出る確率は $P(+ve|\bar{CF}) = 0.004$
+- つまり，**特異度(specificity)**は $P(-ve|\bar{CF}) = 1-0.004 = 0.996$
+
+
+???
+
+嚢胞性線維症のうほうせいせんいしょう
+
+---
+class: middle
+
+# スクリーニングテスト <br> Screen test
+
+実際普段臨床の場で，我らが最も知りたいのは，ある患者がスクリーンテスト陽性の結果 $P(+ve)$ を持って外来に来る時に，**この患者が本当に嚢胞性線維症(CF)を罹っている確率 $P(CF|+ve)$．**
+
+<br>
+
+The question we really want to answer is: "if a patient has a positive sweat conductivity test $P(+ve)$, **what is the probability that the patient has CF $P(CF|+ve)$?**"
+
+つまり，**陽性的中率，positive predictive value (PPV), $P(CF|+ve)$**
+
+---
+class: middle, center
+
+## ベイズの定理をこの例に適用してみよ
+
+仮に，この集団ではCFの有病率は $P(CF) = 0.035$<br> Say the probability of CF in the population is $P(CF) = 0.035$.
+
+$$
+\begin{aligned}
+P(+ve|CF) & = 0.875 \\ 
+    P(CF) & = 0.0325 \\
+P(+ve|\bar{CF}) & = 0.004 \\
+\end{aligned}
+$$
+<br><br>
+$$
+P(CF|+ce) = ?
+$$
+
+
+
+---
+class: middle, center
+
+## ベイズの定理をこの例に適用してみよ
+
+仮に，この集団ではCFの有病率は $P(CF) = 0.035$．<br> Say the probability of CF in the population is $P(CF) = 0.035$.
+
+$$
+\begin{aligned}
+P(+ve|CF) & = 0.875 \\ 
+    P(CF) & = 0.0325 \\
+P(+ve|\bar{CF}) & = 0.004 \\
+\end{aligned}
+$$
+
+**陽性的中率，Positive Predicitve Value, PPV, $P(CF|+ve)$ **
+
+
+$$
+\begin{aligned}
+P(CF|+ve) & = \frac{P(+ve|CF)P(CF)}{P(+ve|CF)P(CF) + P(+ve|\bar{CF})P(\bar{CF})} \\ 
+          & = \frac{0.875\times0.0325}{0.875\times0.0325 + 0.004\times(1-0.0325)} \\
+          & = 0.88
+\end{aligned}
+$$
+
+
+---
+class: middle
+
+- この集団ではCFの有病率は $P(CF) = 0.035$ <br> $\Rightarrow$ テスト行う**前**の確率のため，**事前確率(prior probability)**とも呼ばれる．
+
+- 陽性的中率，Positive Predicitve Value, PPV, $P(CF|+ve) = 0.88$ <br> $\Rightarrow$ はテストを行う**後**の確率のため，**事後確率(posterior probability)**とも呼ばれる．
+
+- つまり，スクリーニングテストを行った後，この患者がCFである確率が，テストを行った前の0.035から，0.88に更新された．
+
+
+---
+class: middle
+
+# 質問&宿題 <br> Question & Homework
+
+例えば，某集団でのHIVの感染率は事前の調査の結果，0.001と推定される．例えばあるスクリーニング検査法の感度(sensitivity)と特異度(specificity)はそれぞれ0.99, 0.98で検査法を開発した製薬メーカーさんから提供された．例えば患者Bさんがこの検査法で陽性の結果が得られた，Bさんが本当にHIVを感染している確率を算出せよ．この結果についてコメントしよ．
+
