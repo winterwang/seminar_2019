@@ -19,7 +19,8 @@ library(xaringanthemer)
 mono_light(
   base_color = "#1c5253",
   header_font_google = google_font("Josefin Sans"),
-  text_font_google   = google_font("M PLUS Rounded 1c", "300", "300i"),
+  # text_font_google   = google_font("M PLUS Rounded 1c", "300", "300i"),
+  text_font_google = google_font("Noto Sans JP", "300", "300i"), 
   code_font_google   = google_font("Droid Mono")
 )
 ```
@@ -124,11 +125,11 @@ class: middle, inverse
 ---
 class: middle
 
-### 成人での喫煙者の割合は20% <br> Prevalence of smoking is 20% among adults, i.e. $P(S) = 0.2$
+#### 成人での喫煙者の割合は20% <br> Prevalence of smoking is 20% among adults, i.e. $P(S) = 0.2$
 
-### 喫煙者の9%，非喫煙者の7%は喘息を罹っている <br> 9% of smokers and 7% of non-smokers have asthma, i.e. $P(A|S)= 0.09, P(A|\bar{S})  = 0.007$
+#### 喫煙者の9%，非喫煙者の7%は喘息を罹っている <br> 9% of smokers and 7% of non-smokers have asthma, i.e. $P(A|S)= 0.09, P(A|\bar{S})  = 0.007$
 
-### Aさんは喫煙者かつ喘息患者の確率を求めよ <br> What is the probability that someone has asthma and is a smoker $P(A\cap S) =?$
+#### Aさんは喫煙者かつ喘息患者の確率を求めよ <br> What is the probability that someone has asthma and is a smoker $P(A\cap S) =?$
 
 ---
 class: middle
@@ -229,3 +230,17 @@ class: middle
 ???
 
 嚢胞性線維症のうほうせいせんいしょう
+
+
+---
+class: middle
+## ベイズの定理の応用 <br> Apply Bayes' Theorem 
+
+
+---
+class: middle, bottom
+background-image: url("./pic/probability_tree.png")
+background-position: 50% 50%
+background-size: contain
+
+ある喘息患者が来院して，医師のあなたはベイズの定理を応用し，この患者が喫煙者である確率を求めてみた．

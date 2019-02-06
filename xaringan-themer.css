@@ -16,13 +16,13 @@
  *    - remarkjs wiki: https://github.com/gnab/remark/wiki
  *
  * ------------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300,300i);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,300i);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Droid+Mono);
 
 
 body {
-  font-family: M PLUS Rounded 1c, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
+  font-family: Noto Sans JP, 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
   font-weight: 300;
   color: #13393A;
 }
