@@ -40,6 +40,7 @@ class: middle
     - コインを投げて，表が出る確率は0.5 &lt;br&gt; when tossing a coin the probability of obtaining a head is 0.5
     - 明日長久手市で雨が降る確率は0.8 &lt;br&gt; The probability that it will rain tomorrow in Nagakute is 0.8
 
+
 - 確率の正式な定義 &lt;br&gt; Formally define the probability: 
 
 $$
@@ -54,7 +55,7 @@ class: middle
 - 極めて重要な概念である &lt;br&gt; probability is crucial to medical science
 
     - イベントの予測 &lt;br&gt; predicting events
-        - Aさん（50歳，男性，心血管疾患病歴なし，運動不足，脳卒中家族歴あり，糖尿病）のこれから１０年の間心臓病で死亡する確率？&lt;br&gt; What is the probability that a particular patient A will die from heart disease in the next 10 years?
+        - Aさん（50歳，男性，心血管疾患病歴なし，運動不足，脳卒中家族歴あり，糖尿病）のこれから10年の間心臓病で死亡する確率？&lt;br&gt; What is the probability that a particular patient A will die from heart disease in the next 10 years?
     - 変数と変数との関係性を評価する &lt;br&gt; assessing whether two characterisitcs are related 
         - ピロリ菌感染と胃がん発生との関係 &lt;br&gt; Is _H. pylori_ infection related with the development of gastric cancer?
 
@@ -96,7 +97,7 @@ class: middle
 
 - 条件付き確率の記載法: `\(P(A|S)\)` &lt;br&gt; the probability that `\(A\)` occurs, given or conditional on `\(S\)` occuring.
 
-条件付き確率もとても重要な概念である，例えば，以下の質問は典型的な条件付き質問：
+条件付き確率もとても重要な概念で，例えば，以下の質問は典型的な条件付き質問：
 高血圧の患者Aさん, これから5年間の間，心筋梗塞に罹患する確率．
 
 ---
@@ -145,6 +146,37 @@ $$
 P(A\cap S) = P(S)\times P(A|S) = 0.018
 $$
 
+---
+class: middle
+# 質問&amp;宿題 &lt;br&gt; Question &amp; Homework - (1)
+
+コスタリカのある村で全住民を対象とした消化器内の鉤虫(hookworm)感染の有無を，便を用いて検査した結果：
+
+| 年齢層 &lt;br&gt; Age | 年齢層割合 &lt;br&gt; age group proportion | 年齢層ごと感染者割合 &lt;br&gt; proportion infected in age group |
+|:----------:|:-------------------------------:|:-----------------------------------------------------:|
+|     0-4    |               0.20              |                          0.09                         |
+|     5-9    |               0.18              |                          0.25                         |
+|    10-19   |               0.22              |                          0.43                         |
+|    20-39   |               0.24              |                          0.46                         |
+|     40+    |               0.16              |                          0.37                         |
+
+???
+
+鉤虫(hookworm)　こうちゅう
+
+---
+class: middle
+# 質問&amp;宿題 &lt;br&gt; Question &amp; Homework - (1)
+
+ある村民がランダムに選ばれた．確率ツリーを実際に描いて，この村民に関する以下の確率を計算せよ．計算の過程も記入してください．
+
+1. 年齢が10-19歳である確率; (10%)
+2. 年齢が10-19歳で，かつ鉤虫を感染している確率; (10%)
+3. 年齢が10-39歳である確率；(10%)
+4. 年齢が10-39歳で，かつ鉤虫を感染している確率; (10%)
+4. 年齢が10-39歳で，かつ鉤虫を感染していない確率; (15%)
+4. 鉤虫を感染している確率; (15%)
+5. 実際に村民の年齢を聞いた結果，年齢は10-39歳で答えてくれた，この村民が鉤虫を感染している確率．(30%)
 
 ---
 class: middle
@@ -325,9 +357,9 @@ class: middle
 ---
 class: middle
 
-# 質問&amp;宿題 &lt;br&gt; Question &amp; Homework - (1)
+# 質問&amp;宿題 &lt;br&gt; Question &amp; Homework - (2)
 
-例えば，某集団でのHIVの感染率は事前の調査の結果，0.001と推定される．あるスクリーニング検査法の感度(sensitivity)と特異度(specificity)はそれぞれ0.99, 0.98で検査法を開発した製薬メーカーさんから提供された．例えば患者Bさんがこの検査法で陽性の結果が得られた，Bさんが本当にHIVを感染している確率を算出せよ．この結果についてコメントしよ．
+例えば，某集団でのHIVの感染率は事前の調査の結果，0.001と推定される．あるスクリーニング検査法の感度(sensitivity)と特異度(specificity)はそれぞれ0.99, 0.98で検査法を開発した製薬メーカーさんから提供された．例えば患者Bさんがこの検査法で陽性の結果が得られた，Bさんが本当にHIVを感染している確率を算出せよ(30%)．この結果についてコメントしよ(35%)．(計算の過程35%)
 
 
 ---
@@ -429,17 +461,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     slide_number_div(i).appendChild(timer);
   });
 })(60000);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 (function() {
