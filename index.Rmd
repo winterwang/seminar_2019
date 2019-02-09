@@ -408,3 +408,16 @@ background-size: contain
 
 #### ゴールドスタンダードと評価したい検査法を対象者全員に受けてもらった結果
 
+---
+class: middle, inverse, center
+# 検査法の組み合わせ <br> Combine the methods for test
+
+
+---
+class: middle
+
+- gold standardとなる方法がない場合
+
+- 複数の検査法を組み合わせることで精度を向上する
+
+
