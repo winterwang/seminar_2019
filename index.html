@@ -498,18 +498,56 @@ class: middle
 
 ### 実際では，糖尿病と非糖尿病は混ざっている
 
-There is no line separating the two groups, and the **subjects are mixed**.
+There is no line separating the two groups, and the **subjects are mixed**. They are **not labeled.**
 
 .pull-left[
-![mixed pop](pic/Typical0.png)
+![mixed pop](pic/Typical1.png)
 ]
 
 .pull-right[
-![mixed pop1](pic/Typical1.png)
+![mixed pop1](pic/Typical0.png)
 ]
 
+---
+class: middle
 
+.pull-left[
+高いカットオフ値を使う時は7人が糖尿病に報告され．
 
+![high cut off in pop](pic/highcutoffDM1.png)
+]
+
+.pull-right[
+低いカットオフ値を使うとその人数が31になる．
+
+![low cut off in pop](pic/lowcutoffDM1.png)
+]
+
+---
+class: middle
+
+### 何がわかったか？ What did we learnt?
+
+- 違うカットオフを使うと感度と特異度が変わる． &lt;br&gt; Different cut-off points yield different sensitivities and specificities. 
+
+- たくさん真のネガティブを確認したい場合，**偽陰性(false negative)**もそれに連れて多くなる．&lt;br&gt; The cut-off point that identifies more true negatives will also identify more false negatives. 
+
+- たくさん真のポジティブを確認したい場合，**偽陽性(false positive)**もそれに連れて多くなる．&lt;br&gt; The cut-off point that identifies more true positives will also identify more false positives.
+
+---
+class: middle
+
+### どこで切るべき？ &lt;br&gt; Where to draw the cut-point?
+
+- もし診断法が侵襲的であり，もしくはとても高価な方法なら &lt;br&gt; If the diagnostic test is expensive or invasive:
+	- 偽陽性をできるだけ減らそう &lt;br&gt; Minimize false positives.
+	- つまり，**特異度の高い方法を選ぶべき．**&lt;br&gt; Choose a cut-off point with high specificity.
+	
+- もし一例を見逃しても害がとても高い場合(致死率が高い病気かつ見つかったらすぐに治すことが可能，もしくはその病気は感染力が非常に高く，広がることが大変になる) &lt;br&gt; If the penalty for missing a case is high (the disease is fatal and treatment exists, or disease easily spreads): 
+	- 真陽性をできるだけあげよう &lt;br&gt; Maximize true positives. 
+	- つまり，**感度の高い方法を選ぶべき．**
+	
+	
 ---
 class: middle, inverse, center
 # 検査法の組み合わせ &lt;br&gt; Combine the methods for test
@@ -518,9 +556,211 @@ class: middle, inverse, center
 ---
 class: middle
 
-- gold standardとなる方法がない場合
+### 複数の方法を使って診断する &lt;br&gt; use of multiple tests 
+
+- gold standardとなる方法がない場合．
 
 - 複数の検査法を組み合わせることで精度を向上する
+
+- 逐次的に(sequentially)あるいは並行的に(simultaneously)
+
+
+???
+
+逐次ちくじ
+
+---
+class: middle
+
+### 逐次的になテスト &lt;br&gt; two-stage screening
+
+- **一回目で陽性反応**が出た人に絞って，もう一度別の方法を検査してもらう，偽陽性を減らす．&lt;br&gt; After the first test was conducted, those who tested **positive** were brough back for the second test to further reduce false positives.
+
+- 結果的に，特異度を上げたが，感度が低くなった．&lt;br&gt; Consequently, the overall process will increase specificity but with reduced sensitivity.
+
+
+---
+class: middle
+
+### 逐次的に2型糖尿病を調べてみた &lt;br&gt; テスト1，空腹時血糖値を検査する
+
+	- 例えば，サンプルが選んできた人口10000人では，２型糖尿病の有病率は5%程度(約500人)．
+	- 血糖値見て糖尿病を検査する場合，感度は70%，特異度は80%とする．
+	- 陽性反応が出た人だけに追加の精密検査を依頼する．
+
+|   | Diabetes                     | Non-Diabetes              |   n  |
+|:-:|:----------------------------:|:-------------------------:|:----:|
+| + |    70% `\(\times\)` 500 = 350    |  9500 `\(-\)` 7600 = 1900     | 2250 |
+| - |    500 `\(-\)` 350 = 150         |  80% `\(\times\)` 9500 = 7600 | 7750 |
+| n |   5% `\(\times\)` 10000 =500     |      9500                 | 10000|
+
+
+
+---
+class: middle
+
+### 逐次的に2型糖尿病を調べてみた &lt;br&gt; テスト2，経口ブドウ糖負荷試験 (oral glucose tolerance test, OGTT)
+
+.pull-left[
+- テスト1(血糖値検査) 
+  - 感度 = 70%
+  - 特異度 = 80%
+- テスト2(OGTT)
+  - 感度 = 90% 
+  - 特異度 = 90% 
+- 組み合わせた結果
+  - 感度 = 315/500 = 63%
+  - 特異度 = (7600 `\(+\)` 1710)/9500 = 98%
+]
+
+.pull-right[
+|   | Diabetes                     | Non-Diabetes               |   n  |
+|:-:|:----------------------------:|:--------------------------:|:----:|
+| + |    **350**                   |  **1900**                  | **2250** |
+| - |     150                      |    7600                    | 7750 |
+| n |     500                      |       9500                 | 10000|
+
+|   | Diabetes                     | Non-Diabetes              |   n  |
+|:-:|:----------------------------:|:-------------------------:|:----:|
+| + |    315                       | 190                       | 505  |
+| - |    35                        | 1710                      | 1745 |
+| n |   **350**                    |      **1900**             | **2250**|
+]
+
+---
+class: middle
+
+### 逐次的に検査する
+
+
+.pull-left[
+**二回とも**陽性が出る人だけに陽性結果を渡す &lt;br&gt; subject is disease positive when test positive in **both** tests.
+
+![both positive](pic/bothpositive.png)
+]
+
+.pull-right[
+**どちらか**が陰性が出たら，陰性結果になる &lt;br&gt; subject is disease negative when test negative in **either** test.
+
+![either negative](pic/eithernegative.png)
+]
+
+
+---
+class: middle
+
+### 逐次的に検査する時の感度
+
+$$
+P(A \cap B) = P(B) \times P(A|B)
+$$
+
+### `\(A\)` と `\(B\)` は独立している場合
+
+$$
+P(A|B) = P(A)
+$$
+
+### したがって，
+
+$$
+P(A\cap B) = P(A) \times P(B)
+$$
+
+`\(\Rightarrow\)` 新しい感度は，２つのテストの感度の**積**: 
+
+New Sensitivity = Sensitivity 1 `\(\times\)` Sensitivity 2
+
+---
+class: middle
+
+### 逐次的に検査する時の特異度
+
+$$
+P(A \cup B) = P(A) + P(B) - P(A\cap B)
+$$
+
+### したがって，
+
+New Specificity = Specificity 1 `\(+\)` Specificity 2 `\(-\)` (Specificity 1 `\(\times\)` Specificity 2)
+
+---
+class: middle
+
+### 同時に検査する &lt;br&gt; simultaneous testing
+
+- 複数の方法を使って同じ対象者を同時に検査を行う &lt;br&gt; Two (or more) tests are conducted in parallel
+
+- 目的は，真の患者をできるだけ多く見つけたい，**感度を上げる** &lt;br&gt; The goal is to maximize the probability that subjects with the disease (true positives) are identified **(increase sensitivity)**
+
+- 結果的に，**特異度は下がってしまう** &lt;br&gt; Consequently, more false positives are also identified **(specificity decreased)**
+
+---
+class: middle
+
+### 同時に検査する時の感度
+
+- 同じ対象者に二回違うテストを行う，**どちらか**陽性が出る場合，陽性だと判断される &lt;br&gt; When two tests are used simultaneously, disease positives are defined as those who test positive **by either one test or by both tests**
+
+- 新しい感度の計算式は: 
+
+$$
+P(A\cup B) = P(A) + P(B) - P(A \cap B)
+$$
+
+- New sensitivity = Sensitivity 1 `\(+\)` Sensitivity 2 `\(-\)` (Sensitivity 1 `\(\times\)` Sensitivity 2)
+
+
+---
+class: middle
+
+### 同時に検査する時の特異度
+
+- 同時に検査する場合，**二回とも**陰性の時のみ，陰性と判断される．&lt;br&gt; When two tests are used simultaneously, disease negatives are defined as those who test negative by both tests.
+
+- 新しい特異度の計算式は：
+
+$$
+P(A \cap B) = P(A) \times P(B)
+$$
+
+- New specificity = Specificity 1 `\(\times\)` Specificity 2
+
+
+
+---
+class: middle
+
+## 実例 Example
+
+ - ２つ違う検査法(A and B)を同時に某病気の検査に使う
+ 
+ - Aの感度は80%，特異度は60%
+ 
+ - Bの感度は90%，特異度は90%
+ 
+ - 同時に検査する場合の感度と特異度を計算せよ
+ 
+ 
+$$
+`\begin{aligned}
+ \text{New sensitivity} &amp; = \text{Sens 1} + \text{Sens 2} - \text{Sens 1} \times \text{Sens 2} \\
+                        &amp; = 80\% + 90\% - (80\% \times 90\%) \\ 
+						&amp; = 98\% \\
+ \text{New Specificity} &amp; = \text{Spec 1} \times \text{Spec 2} \\ 
+                        &amp; = 60\% \times 90\% \\
+						&amp; = 54\%
+\end{aligned}`
+$$
+ 
+---
+class: middle
+
+## 得と損 Gain and Loss
+
+- 一回目で陽性出だ人逐次的にテストを行う時，単独で検査すると比べ**感度が下がるの代わりに特異度が上がる** &lt;br&gt; In sequential testing when positives from the first test are retested, there is **a net loss in sensitivity** but **a net gain in specificity**, compared to either of the tests.
+
+- 複数検査を同時にやる場合，単独で検査すると比べ**感度が上がるとともに，特異度が下がる** &lt;br&gt; In simultaneous testing, there is **a net gain in sensitivity** but **a net loss in specificity**, when compared to either of the tests used.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
