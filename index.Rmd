@@ -409,6 +409,34 @@ background-size: contain
 #### ゴールドスタンダードと評価したい検査法を対象者全員に受けてもらった結果
 
 ---
+class: middle
+
+## 検査値自体は連続値の場合が多い
+
+#### 検査結果はきれいに患者と非患者分ける時はあるが，きれいに区別できない時も多いだろう <br> Distribution of biologic measurements in humans **may or may not permit easy separation** of diseased from non-diseased individuals, based upon the value of the measurement
+
+
+
+---
+class: center, top, inverse
+background-image: url("./pic/tuberculin.png")
+background-position: 50% 90%
+background-size: contain
+
+### 結核菌の反応試験 tuberculin reaction test
+
+
+---
+class: center, top, inverse
+background-image: url("./pic/SBP.png")
+background-position: 50% 90%
+background-size: contain
+
+### 収縮期血圧の分布 <br> distribution of systolic blood pressure
+
+
+
+---
 class: middle, inverse, center
 # 検査法の組み合わせ <br> Combine the methods for test
 
