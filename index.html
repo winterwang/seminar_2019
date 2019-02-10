@@ -620,6 +620,7 @@ class: middle
 | - |     150                      |    7600                    | 7750 |
 | n |     500                      |       9500                 | 10000|
 
+
 |   | Diabetes                     | Non-Diabetes              |   n  |
 |:-:|:----------------------------:|:-------------------------:|:----:|
 | + |    315                       | 190                       | 505  |
@@ -760,7 +761,49 @@ class: middle
 
 - 一回目で陽性出だ人逐次的にテストを行う時，単独で検査すると比べ**感度が下がるの代わりに特異度が上がる** &lt;br&gt; In sequential testing when positives from the first test are retested, there is **a net loss in sensitivity** but **a net gain in specificity**, compared to either of the tests.
 
-- 複数検査を同時にやる場合，単独で検査すると比べ**感度が上がるとともに，特異度が下がる** &lt;br&gt; In simultaneous testing, there is **a net gain in sensitivity** but **a net loss in specificity**, when compared to either of the tests used.
+- 複数検査を同時にやる場合，単独で検査すると比べ**感度が上がるとともに，特異度が下がる** &lt;br&gt; In simultaneous testing, there is **a net gain in sensitivity** but **a net loss in specificity**, when compared to either of the tests used. 
+
+ 
+---
+class: middle
+
+# 質問&amp;宿題 &lt;br&gt; Question &amp; Homework - (3)
+
+WHOのプロトコールに従い，HIVのスクリーニングテストを行う．
+
+- ステージ1: 1回目のテストで陰性で出た人は"HIV陰性"と判断される．1回目で陽性出た人は，その後ステージ2に入る．
+
+- ステージ2: 更に2回同時に同じ手法で検査を行い，**一度でも再度陽性が出たら，"HIV陽性"**として判断される．**このステージで2回とも陰性が出る人は，"HIV陰性"**として診断される．
+
+例えばWHOで使うHIV検査法の感度が `\(\alpha\)`，特異度が `\(\beta\)` とする．
+
+ 
+---
+class: middle
+	
+# 質問&amp;宿題 &lt;br&gt; Question &amp; Homework - (3)
+
+
+1. WHOのプロトコールを利用する時の感度と特異度それぞれの計算式を `\(\alpha, \beta\)` で表示せよ．(30%)
+
+2. 単独でWHOが使う検査法で検査する時と比べ，ステージ化にしたプロトコールの感度と特異度はどう変わったを説明せよ．(40%)
+
+3. プロトコールでHIVをスクリーニングする場合のメリットとデメリットを記述せよ．(30%)
+
+
+
+
+
+---
+class: middle
+
+# 課題 （金曜日の午後に）
+
+### _H. pylori_ 感染診断法について調べる．それぞれの感度特異度を表としてまとめる．各検査法の詳細を確認する．
+
+### _H. pylori_ 除菌の標準治療法，注意事項等にていて調べる．
+
+#### **来週金曜日発表スライドの内容として準備してください．**
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
