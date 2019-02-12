@@ -36,7 +36,7 @@ class: middle
 
 - ベイズの定理を実際に臨床的な疑問に応用する <br> Apply Bayes' Theorem to clinical examples
 
-
+- 検査法を組み合わせした場合の感度と特異度 <br> Know how to calculate sensitivity and specificity when combining methods
 
 ---
 class: middle
