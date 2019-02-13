@@ -2,7 +2,7 @@
 title: "Understand sensitivity and specificity"
 subtitle: "ピロリ菌セミナー"
 author: "王　超辰 | Chaochen Wang"
-date: "2019-02-13 pm"
+date: "2019-02-13 am"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -136,7 +136,7 @@ class: middle
 
 #### 成人での喫煙者の割合は20% <br> Prevalence of smoking is 20% among adults, i.e. $P(S) = 0.2$
 
-#### 喫煙者の9%，非喫煙者の7%は喘息を罹っている <br> 9% of smokers and 7% of non-smokers have asthma, i.e. $P(A|S)= 0.09, P(A|\bar{S})  = 0.007$
+#### 喫煙者の9%，非喫煙者の7%は喘息を罹っている <br> 9% of smokers and 7% of non-smokers have asthma, i.e. $P(A|S)= 0.09, P(A|\bar{S})  = 0.07$
 
 #### Aさんは喫煙者かつ喘息患者の確率を求めよ <br> What is the probability that someone has asthma and is a smoker $P(A\cap S) =?$
 
@@ -323,7 +323,7 @@ P(+ve|\bar{CF}) & = 0.004 \\
 $$
 <br><br>
 $$
-P(CF|+ce) = ?
+P(CF|+ve) = ?
 $$
 
 
