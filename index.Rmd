@@ -537,7 +537,7 @@ class: middle
 ---
 class: middle
 
-### 何がわかったか？ What did we learnt?
+### 何がわかったか？ What did we learn?
 
 - 違うカットオフを使うと感度と特異度が変わる． <br> Different cut-off points yield different sensitivities and specificities. 
 
